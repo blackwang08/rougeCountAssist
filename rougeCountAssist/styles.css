@@ -1,0 +1,302 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'SimSun', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* 主内容区域 */
+main {
+    padding: 30px;
+}
+
+section {
+    margin-bottom: 40px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 3px solid #4facfe;
+    padding-bottom: 10px;
+}
+
+/* 节点属性管理样式 */
+.node-form {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.attribute-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.attribute-group label {
+    font-weight: bold;
+    color: #555;
+}
+
+select, input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #4facfe;
+}
+
+button {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 节点显示样式 */
+.nodes-display h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.node-item {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.node-info {
+    display: flex;
+    gap: 20px;
+}
+
+.node-attribute {
+    font-weight: bold;
+}
+
+.delete-node {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.delete-node:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 道具管理样式 */
+.list-management {
+    margin-bottom: 25px;
+}
+
+.create-list, .list-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.create-list label, .list-selector label {
+    font-weight: bold;
+    color: #555;
+    min-width: 80px;
+}
+
+#new-list-name, #current-list {
+    min-width: 200px;
+}
+
+/* 搜索结果样式 */
+.item-search {
+    margin-bottom: 25px;
+}
+
+#item-search {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#search-results {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.search-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-item:hover {
+    background-color: #e3f2fd;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+/* 当前道具列表样式 */
+.current-items h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.item-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 14px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.item-tag .remove-item {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-tag .remove-item:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 空状态样式 */
+.empty-state {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .node-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .create-list, .list-selector {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #new-list-name, #current-list {
+        min-width: unset;
+        width: 100%;
+    }
+}
